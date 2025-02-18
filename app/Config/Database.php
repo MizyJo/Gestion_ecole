@@ -24,32 +24,33 @@ class Database extends Config
      *
      * @var array<string, mixed>
      */
-    public array $default = [
+    public $default = [
         'DSN'          => '',
         'hostname'     => 'localhost',
-        'username'     => '',
+        'username'     => 'root',
         'password'     => '',
-        'database'     => '',
-        'DBDriver'     => 'MySQLi',
+        'database'     => 'gestion_ecole',
+        'DBDriver'     => 'MySQLi',  // MySQLi pour MySQL, si tu utilises MySQL, c'est bien "MySQLi"
         'DBPrefix'     => '',
-        'pConnect'     => false,
-        'DBDebug'      => true,
-        'charset'      => 'utf8mb4',
-        'DBCollat'     => 'utf8mb4_general_ci',
+        'pConnect'     => false,     // Connexion persistante désactivée, tu peux mettre true si tu veux la garder
+        'DBDebug'      => true,      // Activer le débogage des requêtes SQL
+        'charset'      => 'utf8mb4', // UTF-8 pour supporter tous les caractères
+        'DBCollat'     => 'utf8mb4_general_ci', // Pour la collation
         'swapPre'      => '',
-        'encrypt'      => false,
-        'compress'     => false,
-        'strictOn'     => false,
-        'failover'     => [],
-        'port'         => 3306,
-        'numberNative' => false,
-        'foundRows'    => false,
+        'encrypt'      => false,     // Pour la connexion cryptée (à laisser false si non nécessaire)
+        'compress'     => false,     // Compression des données (à laisser false si non nécessaire)
+        'strictOn'     => false,     // Mode strict pour les requêtes (false par défaut)
+        'failover'     => [],        // Serveurs de secours (si nécessaire)
+        'port'         => 3306,      // Port de MySQL, 3306 par défaut
+        'numberNative' => false,     // Support des résultats numérotés
+        'foundRows'    => false,     // Nombre de lignes trouvées (utile pour COUNT)
         'dateFormat'   => [
-            'date'     => 'Y-m-d',
-            'datetime' => 'Y-m-d H:i:s',
-            'time'     => 'H:i:s',
+            'date'     => 'Y-m-d',         // Format de la date (année-mois-jour)
+            'datetime' => 'Y-m-d H:i:s',   // Format de la date et de l'heure (année-mois-jour heure:minute:seconde)
+            'time'     => 'H:i:s',         // Format de l'heure (heure:minute:seconde)
         ],
     ];
+    
 
     //    /**
     //     * Sample database connection for SQLite3.
